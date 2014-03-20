@@ -1,0 +1,1 @@
+This is where you put your cert from cloudinary. You can delete this text file when you're done.

@@ -1,0 +1,48 @@
+/*  
+----------  Google Fonts
+*/
+.archivo {
+	font-family: 'Archivo Black', sans-serif;
+	font-weight:300;
+}
+.archivo-narrow {
+	font-family: 'Archivo Narrow', sans-serif;
+	font-weight:300;
+}
+.red {
+	color: #c11a2a;
+}
+/*  
+----------  end Google Fonts
+*/
+
+/*
+
+HEADER 
+ 
+*/
+
+.title {
+	position:absolute;
+	top:50px;
+	left: 90px;
+	font-size: 2.3em;
+	text-shadow: 3px 3px 3px #E6E6CA;
+}
+
+form.table-style label, form.table-style input {
+	display: table-cell;
+	margin: 5px;
+}
+div.table-style {
+    display: table-cell;
+}
+.t-row {
+	display: table-row;
+}
+.mt10 {
+    margin-top:  10px;
+}
+.relative {
+	position:relative;
+}

@@ -1,0 +1,40 @@
+= Installation
+
+You should probably get the latest stripe library and replace the existing Stripe directory here with the latest from Stripe at
+
+     https://github.com/stripe/stripe-php
+
+To get started, add something like the following to your PHP script:
+
+Libraries::add('stripe', array(
+"includePath" => '/Users/YOU/Sites/YOURDOMAIN_DIRECTORY/app/libraries/stripe/lib/',
+'prefix' => false,
+'transform' => function($class, $config) {
+//FIXME this is pretty slow
+$map = array(
+		'Stripe' => 'lib/Stripe',
+		'Stripe_Charge'     => 'Stripe/Charge'
+);
+if (!isset($map[$class])) {
+	return false;
+}
+return "{$config['path']}/{$map[$class]}{$config['suffix']}";
+}
+));
+
+or, if you are using a conventional PHP app:
+
+    require_once("/path/to/stripe-php/lib/Stripe.php");
+    
+
+
+Simple usage looks like:
+
+    Stripe::setApiKey('d8e8fca2dc0f896fd7cb4cb0031ba249');
+    $myCard = array('number' => '4242424242424242', 'exp_month' => 5, 'exp_year' => 2015);
+    $charge = Stripe_Charge::create(array('card' => $myCard, 'amount' => 2000, 'currency' => 'usd'));
+    echo $charge;
+
+= Documentation
+
+Please see https://stripe.com/api for up-to-date documentation.
